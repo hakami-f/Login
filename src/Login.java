@@ -8,22 +8,21 @@ public class Login {
         String domain = "";
         // Ask the user for First name, Last name and Company domain
         System.out.println("First name?");
-        firstName = in.nextLine();
+        firstName = in.nextLine().trim();
         System.out.println("Last name?");
-        lastName = in.nextLine();
+        lastName = in.nextLine().trim();
         System.out.println("Business domain name?");
-        domain = in.nextLine();
+        domain = in.nextLine().trim();
         // Check if first name or last name is missing
-       if (firstName.isEmpty()|| lastName.isEmpty()) {
+        if (firstName.isEmpty() || lastName.isEmpty()) {
             System.out.println("Error! First and/or last name is missing");
-         
-        }
-        else {
-        // Generate email and username
-        GenerateEmail(firstName, lastName, domain);
-        GenerateUsername(firstName, lastName);
-        }
 
+        } else {
+            // Generate email and username
+            GenerateEmail(firstName, lastName, domain);
+            GenerateUsername(firstName, lastName);
+        }
+        in.close();   
     }
 
     public static void GenerateEmail(String firstName,
@@ -31,9 +30,9 @@ public class Login {
             String domain) {
         // Create the email address using first name, last name and domain
         String email = firstName + "." +
-                lastName+ "@" + domain;
-                email=email.toLowerCase();
-                
+                lastName + "@" + domain;
+        email = email.toLowerCase();
+
         System.out.println(email);
     }
 
