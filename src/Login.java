@@ -14,7 +14,7 @@ public class Login {
         System.out.println("Business domain name?");
         domain = in.nextLine();
         // Check if first name or last name is missing
-        if (firstName.equals("") || lastName.equals("")) {
+        if (firstName.IsEmpty()|| lastName.IsEmpty()) {
             System.out.println("Error! First and/or last name is missing");
             return;
         }
